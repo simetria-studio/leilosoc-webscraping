@@ -11,7 +11,7 @@ async function timeout(ms) {
 
 
 async function scrapping() {
-  const browser = await puppeteer.launch( {executablePath: '/usr/bin/chromium-browser', headless: true} ); // Iniciado o navagado, false para mostrar ele
+  const browser = await puppeteer.launch( {executablePath: '/usr/bin/chromium-browser', headless: true, args: ["--no-sandbox"]} ); // Iniciado o navagado, false para mostrar ele
   const page = await browser.newPage(); // Abrindo uma pagina
   await page.goto('https://www.citius.mj.pt/portal/consultas/consultascire.aspx'); // Qual pagina deve acessar
   // await timeout(8000);

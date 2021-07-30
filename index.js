@@ -141,9 +141,9 @@ async function scrapping() {
   await browser.close();
 }
 
-// scrapping();
+scrapping();
 
-const job = new CronJob('0 * * * * *', () => {
-  // console.log('sucesso!');
-  scrapping();
-}, null, true, 'America/Sao_Paulo');
+// const job = new CronJob('0 * * * * *', () => {
+//   // console.log('sucesso!');
+//   scrapping();
+// }, null, true, 'America/Sao_Paulo');

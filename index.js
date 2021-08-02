@@ -139,7 +139,7 @@ async function scrapping() {
   });
 
   await page.screenshot({path: 'teste.png', fullPage: true});
- 
+
   await browser.close();
 }
 

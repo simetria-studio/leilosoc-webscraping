@@ -1,14 +1,14 @@
-const CronJob = require('cron').CronJob
+const cron = require("node-cron");
+const express = require("express");
 const puppeteer = require('puppeteer');
 const axios = require('axios');
+
+app = express();
 
 // Setar um tempo para  apagina demorra a fechar, não é necessario
 async function timeout(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-// Função para ler
-
 
 async function scrapping() {
   const browser = await puppeteer.launch( {executablePath: '/usr/bin/chromium-browser', headless: true, args: ["--no-sandbox", "--disable-setuid-sandbox"]} );
@@ -145,7 +145,6 @@ async function scrapping() {
 
 // scrapping();
 
-const job = new CronJob('*/2 * * * * *', () => {
-  // console.log('sucesso!');
-  scrapping();
-}, null, true);
+cron.schedule("*/2 * * * *", () => scrapping());
+
+app.listen(1313);

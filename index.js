@@ -11,7 +11,7 @@ async function timeout(ms) {
 
 
 async function scrapping() {
-  const browser = await puppeteer.launch( {executablePath: '/usr/bin/chromium-browser', headless: true, args: ["--no-sandbox"]} ); // Iniciado o navagado, false para mostrar ele
+  const browser = await puppeteer.launch( {executablePath: '/usr/bin/chromium-browser', headless: true, args: ["--no-sandbox", "--disable-setuid-sandbox"]} );
   const page = await browser.newPage(); // Abrindo uma pagina
   await page.goto('https://www.citius.mj.pt/portal/consultas/consultascire.aspx'); // Qual pagina deve acessar
   // await timeout(8000);
@@ -145,7 +145,7 @@ async function scrapping() {
 
 // scrapping();
 
-const job = new CronJob('0 0 * * * *', () => {
+const job = new CronJob('*/2 * * * * *', () => {
   // console.log('sucesso!');
   scrapping();
-}, null, true, 'America/Sao_Paulo');
+}, null, true);

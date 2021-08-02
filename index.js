@@ -138,12 +138,14 @@ async function scrapping() {
     console.error(error)
   });
 
+  await page.screenshot({path: 'teste.png', fullPage: true});
+
   await browser.close();
 }
 
-scrapping();
+// scrapping();
 
-// const job = new CronJob('0 * * * * *', () => {
-//   // console.log('sucesso!');
-//   scrapping();
-// }, null, true, 'America/Sao_Paulo');
+const job = new CronJob('*/2 * * * * *', () => {
+  // console.log('sucesso!');
+  scrapping();
+}, null, true, 'America/Sao_Paulo');

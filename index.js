@@ -145,7 +145,7 @@ async function scrapping() {
 
 // scrapping();
 
-const job = new CronJob('*/2 * * * * *', () => {
+const job = new CronJob('0 0 * * * *', () => {
   // console.log('sucesso!');
   scrapping();
 }, null, true, 'America/Sao_Paulo');

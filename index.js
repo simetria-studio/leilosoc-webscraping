@@ -39,6 +39,9 @@ async function scrapping() {
   await page.$eval('#ctl00_ContentPlaceHolder1_ddlGrupoActos', el => {
     el.value = '20'
   });
+  await page.$eval('#ctl00_ContentPlaceHolder1_ddlActos', el => {
+    el.value = 'Pub. - Sentença Declaração Insolvência'
+  });
 
   // Pegando p botão do evento
   const dar1 = await page.$('.submit');

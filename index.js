@@ -154,8 +154,8 @@ async function scrapping() {
   await browser.close();
 }
 
-// scrapping();
+scrapping();
 
-cron.schedule("*/2 * * * *", () => scrapping());
+// cron.schedule("*/2 * * * *", () => scrapping());
 
-app.listen(1313);
+// app.listen(1313);

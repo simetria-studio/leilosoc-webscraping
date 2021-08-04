@@ -156,6 +156,6 @@ async function scrapping() {
 
 // scrapping();
 
-cron.schedule("*/5 * * * *", () => scrapping());
+cron.schedule("*/2 * * * *", () => scrapping());
 
 app.listen(1313);

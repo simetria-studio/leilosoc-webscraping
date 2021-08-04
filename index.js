@@ -143,8 +143,7 @@ async function scrapping() {
   }
 
   // console.log(dados);
-  // http://159.89.36.106 -- servidor de produção
-  axios.post('http://127.0.0.1:8000/citius/scraping', dados).then(res => {
+  axios.post('http://159.89.36.106/citius/scraping', dados).then(res => {
     // console.log(res);
   }).catch(error => {
     console.error(error)
